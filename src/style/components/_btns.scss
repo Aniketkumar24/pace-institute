@@ -1,0 +1,14 @@
+@use "./../variable/" as *;
+
+.btn {
+  padding: 0.5em 1em;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  display: inline-block;
+  &.primary-btn {
+    background: $primary-clr;
+    color: $fg-contrast-clr;
+  }
+}

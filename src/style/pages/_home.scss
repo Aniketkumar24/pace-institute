@@ -1,0 +1,147 @@
+@use "./../variable/" as *;
+
+.hero-section {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  .hero-img {
+    width: 50%;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin-top: 1.25em;
+    p {
+      margin-bottom: 0.75em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    & {
+      padding: 0 10%;
+      .hero-img {
+        width: 50%;
+      }
+    }
+  }
+  @media (min-width: 1000px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      .hero-img {
+        width: 75%;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      .hero-img {
+        width: 50%;
+      }
+    }
+  }
+}
+
+section {
+  margin: 2em 0;
+  padding: 0 5%;
+  .section-heading {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+    padding-bottom: 0.75em;
+    padding-right: 0.75em;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 6px;
+      width: 120%;
+      background: $primary-clr;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 120%;
+      right: 0;
+      top: 0;
+      background: $primary-clr;
+    }
+    .title {
+      font-size: 2rem;
+    }
+  }
+  .services-list {
+    padding-left: 1em;
+    .services-list-item {
+      color: $primary-clr;
+      margin-bottom: 1.25em;
+      .services-text {
+        color: $fg-clr;
+        margin-left: 2em;
+        margin-bottom: 0.75em;
+      }
+      a {
+        margin-left: 2em;
+      }
+    }
+    @media (min-width: 800px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 0.5em;
+      text-align: center;
+      list-style: none;
+      justify-items: center;
+      align-items: center;
+      .services-list-item {
+        padding: 1em;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 15%;
+          right: -1em;
+          height: 70%;
+          width: 1px;
+          background: rgba($color: $primary-clr, $alpha: 0.5);
+          display: none;
+        }
+        &:first-child {
+          &::after {
+            display: block;
+          }
+        }
+        .services-name {
+          text-transform: uppercase;
+          margin-bottom: 1em;
+        }
+      }
+    }
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(3, 1fr);
+      .services-list-item {
+        &::after {
+          display: block;
+        }
+        &:last-child {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1000px) {
+    margin: 4em 0;
+    .section-heading {
+      margin-bottom: 2em;
+      .title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
