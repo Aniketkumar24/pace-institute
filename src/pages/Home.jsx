@@ -15,7 +15,6 @@ const HeroSection = () => {
             growth in a direction and making required changes in their
             position".
           </p>
-          <p>Pace is the no.1 institute</p>
           <p>
             PACE Institute has mentored thousands of successful students in
             multiple disciplines. Quality education is necessary in multiple
